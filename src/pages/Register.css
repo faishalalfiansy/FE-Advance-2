@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+.bodyLogin{  
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  
+}
+
+.cardss{
+  display: flex;
+  flex-wrap: wrap;
+  width: 590px;
+  height: 893px;
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid #f1f1f1;
+  border-radius: 4px;
+  gap: 36px;
+}
+
+.login-header{
+  width: 100%;
+  height: 75px;
+  gap: 10px;
+  text-align: center;
+}
+.login-header > header{
+  font-family: poppins;
+  font-size: 32px;
+  line-height: 35.2px;
+  font-weight: bold;
+  color: #222325;
+}
+
+.login-header > p {
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+  color: #333333AD;
+}
+
+.body-input{
+  width: 518px;
+  height: 700px;
+  gap: 24px;
+}
+
+/* mengatur lebar isi konten*/
+.box-input{
+  position: relative;
+  margin-bottom: 20px;
+  gap: 18px;
+}
+
+/* mengatur box lebar isi inputan */
+.box-input > .input-box{
+  position: relative;
+  width: 100%;
+  height: 76px;
+}
+
+.input-box> label{
+  height: 28px;
+  padding: 0px 16px 4px 0px;
+  gap: 4px;
+  color: #333333ca;
+  font-weight: 400px;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+}
+.input-box > label > span{
+  color: #FF5C2B;
+}
+
+.input-field {
+  width: 100%;
+  height: 48px;
+  border: 2px solid #F1F1F1;
+  border-radius: 6px;
+  padding: 4px 10px 4px 10px;
+}
+
+.input-box > .input-field:focus{
+  outline: 2px solid #F1F1F1;
+}
+
+.eye{
+  position: absolute;
+  left: 95%;
+  transform: translate(-40%,-140%);
+}
+/*  */
+.konten-input1 {
+  width: 100%;
+  height: 76px;
+  margin: 5px 0px 10px 0px;
+  gap: 10px;
+}
+
+.konten-input1 > label {
+  height: 28px;
+  padding: 0px 16px 4px 0px;
+  gap: 4px;
+  color: #333333ca;
+  font-weight: 400px;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+}
+
+.konten-input1 > label > span {
+  color: #FF5C2B;
+}
+
+.box-nomor {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  display: flex;
+}
+
+.subone {
+  width: 10%;
+  height: 48px;
+}
+
+.lkode {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #3a35411f;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 4px 10px 4px 10px;
+  margin-top: 6px;
+  margin-right: 0px;
+}
+
+.subtwo {
+  width: 25%;
+  height: 48px;
+  margin-right: 15%;
+}
+
+#kode {
+  width: 100%;
+  height: 48px;
+  font-family: roboto;
+  padding: 4px 10px 4px 10px;
+  cursor: pointer;
+  line-height: 22.4px;
+  border: 2px solid #3a35411f;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 4px 10px 4px 10px;
+  margin-top: 6px;
+  margin-left: 0px;
+  border-left: 0px;
+}
+
+.subtree {
+  width: 60%;
+  height: 48px;
+}
+
+.input-nomor {
+  width: 100%;
+  height: 48px;
+  border: 2px solid #3a35411f;
+  border-radius: 6px;
+  padding: 4px 10px 4px 10px;
+  margin-top: 6px;
+}
+/*  */
+
+#lupa{
+  position: relative;
+  text-align: right;
+  margin-top: 10px;
+}
+.forget{
+  text-decoration: none;
+  color: #333333d0;
+}
+
+.box-submit{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100px;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.box-submit .input-box{
+  width: 100%;
+  height: 42px;
+}
+
+.box-submit > .input-box > button {
+  width: 100%;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+}
+
+.box-submit > .input-box > .regis{
+  background-color: #3ECF4C;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.box-submit > .input-box > .punya{
+  background-color: #E2FCD9CC;
+  color: #3ECF4C;
+  cursor: pointer;
+}
+
+.middle-text{
+  position: relative;
+  margin: 30px 0;
+  width: 100%;
+  height: 22px;
+  gap: 10px;
+}
+
+.orText{
+  position: absolute;
+  margin: 0px;
+  padding: 0px 10px 0px 8px;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  background-color: #FFFFFF;
+  color: #333333AD;  
+}
+
+.middle-text > hr{
+  border: 2px solid #F1F1F1;
+}
+
+.social > button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 42px;
+  padding: 0px 16px;
+  border: 2px solid #F1F1F1;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.inGoogle img{
+  width: 30px;
+  height: 30px;
+}
+
+.inGoogle p{
+  padding: 6px 0px;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+}
+
+@media only screen and (max-width : 580px){
+  *{
+    font-size: 12px;
+  }
+ 
+ .navbar{
+     padding: 16px 24px 16px 24px;
+     border-top: 1px solid #3E434A4F;
+     border-bottom: 1px solid #3E434A4F;
+     box-shadow: 4px 8px 12px #3E434A26;
+ }
+ 
+ .bodyLogin{
+     padding: 70px 20px 28px 20px;
+     height: 100%;
+ }
+ 
+ .cardss{
+     display: flex;
+     flex-wrap: wrap;
+     width: 320px;
+     height: 850px;
+     padding: 16px;
+     background: #FFFFFF;
+     border: 1px solid #F1F1F1;
+     border-radius: 4px;
+     gap: 10px;
+ }
+ 
+ .body-input{
+     width: 280px;
+     height: 700px;
+     gap: 20px;
+ }
+
+ .eye{
+  position: absolute;
+  left: 90%;
+  transform: translate(-40%,-140%);
+}
+
+.subtwo{
+  width: 30%;
+  margin-right: 5%;
+}
+.subone{
+  width: 15%;
+}
+
+#kode{
+  padding: 0px px;
+}
+ 
+}
+ 

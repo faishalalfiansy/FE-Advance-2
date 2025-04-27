@@ -1,0 +1,545 @@
+@import "tailwindcss";
+
+.container-kategori{
+  padding: 64px 120px 64px 120px;
+}
+.box-judul{
+    width: 100%;
+    height: 100px;
+    gap: 10px;  
+}
+
+.kategori{
+    display: flex;
+    flex-wrap: wrap;
+    gap : 20px;
+    width: 100%;
+}
+
+.box-judul > h1{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.box-judul > p{
+    color: #4a494992;
+}
+
+.container-body{
+    display: flex;
+    width: 100%;
+    gap : 5%;
+}
+
+.box-filter{
+    background-color: #FFFFFF;
+    width: 35%;
+    max-height: max-content;
+    justify-items: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.filter{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter > p{
+    font-weight: 500;
+    color: #333333AD;
+    font-size: 18px;
+}
+
+.filter > span{
+    color: red;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.card-kategori{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #3a354138;
+    border-radius: 5px;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: max-content;
+    padding: 5px;
+    gap: 10px;
+} 
+.pil-kategori{
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+}
+.pil-kategori > img{
+    width: 10%;
+    height: 100%;
+}
+
+.arrow-rotate {
+    transform: rotate(180deg);
+}
+
+.pil-kategori > p{
+    width: 90%;
+    color: #3ECF4C;
+}
+
+.pil-check{
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.check{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    gap: 16px;
+    padding-left: 4px;
+    align-items: center;
+}
+
+.check > input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3ECF4C;
+    border-radius: 4px; 
+    background-color: #E2FCD9CC;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #3ECF4C; 
+}
+
+
+input[type="checkbox"]:checked::before {
+    content: "✔";
+    display: block;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.check > label{
+    width: 90%;
+    color: #333333AD;
+}
+
+.pil-checkR{
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.radio{
+    display: flex;
+    width: 100%;
+    height: 25px;
+    gap: 16px;
+    padding-left: 4px;
+    align-items: center;
+}
+
+.radio > input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3ECF4C;
+    border-radius: 10px; 
+    background-color: #E2FCD9CC;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #3ECF4C; 
+}
+
+
+input[type="checkbox"]:checked::before {
+    display: block;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.radio > label{
+    width: 90%;
+    color: #333333AD;
+}
+
+.box-isikategori{
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+}
+
+.box-pencarian{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-height: max-content;
+    justify-content: right;
+}
+
+.box-pencarian > button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 18%;
+    height: 40px;
+    gap: 3px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: 1px;
+    color: #3a3541b4;
+    cursor: pointer;
+}
+
+.box-pencarian > input{
+    width: 30%;
+    height: 40px;
+    background-color: #FFFFFF;
+    padding-left: 10px;
+    border-radius: 10px;
+    padding-right: 45px;
+}
+
+.box-pencarian > input::placeholder{
+    color: #3a3541b4;
+}
+
+.box-pencarian > img{
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.box-isiCardBeranda{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .urutkan{
+    width: 160px;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    right: 200px;
+    top: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    transition: max-height 0.5s;
+  }
+
+  .urutkan > .btn-urutkan{
+    width: 100%;
+    height: 40px;
+    color: #3a3541b4;
+    cursor: pointer;
+
+  }
+
+  .btn-urutkan:hover{
+    background-color: #F4F5FA;
+  }
+
+  .btn-urutkan:active{
+    color: #222325;
+  }
+  
+  .card-kelas{
+    width: 48%;
+    height: 426px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .img-judul{
+    width: 100%;
+    height: 193px;
+    border-radius: 10px;
+  }
+  
+  .card-isi{
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  
+  .card-isi h3{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222325;
+    line-height: 21.6px;
+  }
+  
+  .card-isi p{
+    width: 100%;
+    margin-top: 0px;
+    font-size: 16px;
+    color: #333333AD;
+    font-weight: 500;
+    line-height: 22.4px;
+  }
+  
+  .instruktur{
+    display: flex;
+    width: 100%;
+    height: 42px;
+  }
+  
+  .instruktur img{
+    width: 14%;
+    height: 90%;
+    border-radius: 10px;
+  }
+  .info{
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .info h5{
+    width: 80%;
+    font-size: 16px;
+    color: #222325;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .info p{
+    width: 80%;
+    font-size: 14px;
+    color: #333333AD;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .info p span{
+    color: #333333AD;
+    font-weight: 700;
+  }
+  .card-akhir{
+    width: 100%;
+    height: 29px;
+    display: inline-flex;
+    margin-top: 15px;
+  }
+  .rating{
+    display: flex;
+    width: 45%;
+    gap: 5px;
+  }
+  .bintang{
+    display: inline-flex;
+    margin-top: 4.5px;
+  }
+  .bintang li{
+    list-style: none;
+  }
+  .rating p{
+    margin-top: 5px;
+  }
+  .harga{
+    width: 55%;
+    padding-right: 10px;
+  }
+  .harga h3{
+    font-family: system-ui, -apple-system, 
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 0px;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 600;
+    color: #3ECF4C;
+    line-height: 28.8px;
+  }
+
+  .box-pageHalaman{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
+  .button-pagehalaman{
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    height: 40px;
+    gap: 6px;
+}
+
+.nomorhalaman > button{
+    border-radius: 10px;
+    border: 1px;
+    color: #3a3541b4;
+    cursor: pointer;
+    width: 40px;
+    height: 100%;
+}
+
+.btn-arrowhalaman{
+    background-color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 100%;
+    border-radius: 10px;
+    padding-left: 7px;
+}
+
+.btn-arrowhalaman:nth-of-type(2){
+  transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 600px){
+
+  .container-kategori{
+    padding: 64px 30px 64px 30px;
+  }
+
+  .box-judul{
+    height: 150px;
+  }
+
+  .container-body{
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .box-filter{
+    width: 100%;
+  }
+  .box-isikategori{
+    width: 100%;
+  }
+
+  .box-pencarian{
+    width: 100%;
+  }
+  .box-pencarian > button{
+    width: 50%;
+  }
+  .box-pencarian > input{
+    width: 50%;
+  }
+
+  .urutkan{
+    right: 190px;
+  }
+
+  .card-kelas{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 17px 17px 17px 17px;
+    gap: 8px;
+    width: 100%;
+    height: 148px;
+  }
+  .img-judul{
+    width: 85px;
+    height: 82px;
+  }
+  .card-content{
+    justify-content: center;
+    width: 100px;
+    height: 80px;
+  }
+  .card-isi{
+    width: 194px;
+    height: 35px;
+    overflow: hidden;
+    margin: 0px;
+  }
+  .card-isi h3{
+    margin-top : 0px;
+    margin-bottom: 22px;
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+  .instruktur{
+    /* justify-content: center; */
+    align-items: center;
+    width: 194px;
+    height: 45px;
+  }
+  .instruktur img{
+    width: 36px;
+    height: 36px;
+  }
+  .info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+  }
+  .info h3{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .info p{
+    font-size: 12px;
+    margin-top: 0px;
+  }
+  .card-akhir{
+    display: flex;
+    width: 100%;
+    height: 24px;
+  }
+  .rating{
+    display: flex;
+    /* width: 143px; */
+  }
+  .harga h3{
+    font-size: 20px;
+  }
+  .card-akhir{
+    width: 288px;
+    height: 24px;
+    margin-top: 0px;
+  }
+
+  .box-pageHalaman{
+    justify-content: center;
+  }
+
+
+}
