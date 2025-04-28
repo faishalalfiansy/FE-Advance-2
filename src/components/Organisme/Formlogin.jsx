@@ -8,51 +8,47 @@ import Logol from "/src/assets/image/logoGoogle.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
-import userStore from "/src/components/Store/UserStore";
+import { useDispatch } from "react-redux";
+import { setUser } from "/src/components/Store/Redux/userSlice.js";
+import { getData } from "/src/components/Service/api.js";
 
 const Formlogin = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
 
-  const setUser = userStore((state) => state.setUser);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setLoginData({
-      ...loginData,
-      [name]: value,
-    });
+    setLoginData({ ...loginData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!loginData.email || !loginData.password) {
       alert("Email dan password harus diisi!");
       return;
     }
-    try {
-      const res = await axios.get("https://67f1488ac733555e24acb4bb.mockapi.io/users");
 
-      // cek email
-      const user = res.data.find((u) => u.email === loginData.email);
+    try {
+      const users = await getData();
+      const user = users.find((u) => u.email === loginData.email);
 
       if (!user) {
         alert("Email tidak ditemukan!");
         return;
       }
 
-      // cek password
       if (user.password !== loginData.password) {
         alert("Password salah!");
         return;
       }
 
-      setUser(user);
+      dispatch(setUser(user));
       alert("Login berhasil!");
       navigate("/beranda");
 
@@ -61,6 +57,7 @@ const Formlogin = () => {
       alert("Terjadi kesalahan saat login");
     }
   };
+
   const klik = (path) => {
     navigate(path);
   };

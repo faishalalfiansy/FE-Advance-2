@@ -11,11 +11,13 @@ import Logol from "/src/assets/image/logoGoogle.png";
 import Bendera from "/src/assets/image/logoIndonesia.png"
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
-import userStore from "../Store/UserStore";
+import { useDispatch } from "react-redux";
+import { setUser } from "/src/components/Store/Redux/userSlice.js";
+import { getData, postData } from "/src/components/Service/api.js";
 
 const Formregister = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [dataUser, setDataUser] = useState({
     nama: "",
@@ -25,14 +27,9 @@ const Formregister = () => {
     repassword: "",
   });
 
-  const setUser = userStore((state) => state.setUser);
- 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setDataUser({
-      ...dataUser,
-      [name]: value
-    })
+    setDataUser({ ...dataUser, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -43,45 +40,44 @@ const Formregister = () => {
     if (password !== repassword) {
       alert("Password tidak sama!");
       return;
-    }else if (password.length < 6) {
+    } else if (password.length < 6) {
       alert("Password minimal 6 karakter!");
       return;
     }
-      try {
-        // Cek email terdaftar
-        const res = await axios.get("https://67f1488ac733555e24acb4bb.mockapi.io/users");
-        const emailExists = res.data.some((user) => user.email === email);
-        if (emailExists) {
-          alert("Email sudah digunakan!");
-          return;
-        }
 
-        //simpan ke mockapi
-        const response = await axios.post("https://67f1488ac733555e24acb4bb.mockapi.io/users", {
-          name: nama,
-          email,
-          phone: telfon,
-          password,
-        });
+    try {
+      const users = await getData();
+      const emailExists = users.some((user) => user.email === email);
 
-        setUser(response.data);
-
-        alert("Registrasi berhasil!");
-
-        setDataUser({
-          nama: "",
-          email: "",
-          telfon: "",
-          password: "",
-          repassword: "",
-        });
-
-      } catch (err) {
-        console.error(err);
-        alert("Terjadi kesalahan saat registrasi");
+      if (emailExists) {
+        alert("Email sudah digunakan!");
+        return;
       }
+
+      const newUser = await postData({
+        name: nama,
+        email,
+        phone: telfon,
+        password,
+      });
+
+      dispatch(setUser(newUser));
+      alert("Registrasi berhasil!");
+
+      setDataUser({
+        nama: "",
+        email: "",
+        telfon: "",
+        password: "",
+        repassword: "",
+      });
+
+    } catch (err) {
+      console.error(err);
+      alert("Terjadi kesalahan saat registrasi");
+    }
   };
-  
+
   const tologin = (path) => {
     navigate(path);
   };
